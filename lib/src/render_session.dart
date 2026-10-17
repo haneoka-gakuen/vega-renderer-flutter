@@ -4,6 +4,7 @@ final class VegaRenderSession extends RenderSession {
   VegaRenderSession({
     required super.renderer,
     required super.fetch,
+    super.textureDataFetch,
     super.reuseDecodedImages,
   });
 }
