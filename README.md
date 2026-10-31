@@ -1,9 +1,9 @@
 # Vega renderer for Flutter
 
-Vega 的独立 Flutter 渲染后端。`VegaRenderSession` 接收通用绘制图、资源标识与字节加载器，通过共享 GPU kernel 提交图元并管理帧资源。
+An independent Flutter rendering backend for Vega. `VegaRenderSession` takes a generic draw graph, asset identities and a byte loader, then submits primitives and manages frame resources through the shared GPU kernel.
 
-游戏插件把源场景、相机、角色和特效编译为绘制合同；宿主组合时钟、媒体、存储与输入。后端可以由 Flutter 应用或独立游戏选择，资源加载器由调用方提供。
+Game plugins compile source scenes, cameras, characters and effects into the drawing contract. The host supplies the clock, media, storage and input. A Flutter app or a standalone game can choose this backend, and the caller provides the asset loader.
 
-`scene_math.dart` 导出纯数字矩阵合同。公共绘制与图片缓存由 `render-kernel-flutter` 共享。
+`scene_math.dart` exports the pure numeric matrix contract. Shared drawing and image caching come from `render-kernel-flutter`.
 
-运行 `flutter pub get` 与 `flutter analyze`。此源版本已进入 Haneoka 的 Linux Flutter AOT 构建，并在真实剧情、跳转和存档恢复中运行。
+Run `flutter pub get` and `flutter analyze` from the repository root. Haneoka's Linux Flutter AOT build uses this source and has run it with real stories, seeking and save restoration.
