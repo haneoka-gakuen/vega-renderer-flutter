@@ -1,9 +1,20 @@
 # Vega renderer for Flutter
 
-An independent Flutter rendering backend for Vega. `VegaRenderSession` takes a generic draw graph, asset identities and a byte loader, then submits primitives and manages frame resources through the shared GPU kernel.
+Flutter rendering backend for the [Vega](https://github.com/haneoka-gakuen/vega) visual novel engine.
 
-Game plugins compile source scenes, cameras, characters and effects into the drawing contract. The host supplies the clock, media, storage and input. A Flutter app or a standalone game can choose this backend, and the caller provides the asset loader.
+`VegaRenderSession` takes a generic draw graph, asset identities and a byte loader, then submits primitives and manages frame resources through [`render-kernel-flutter`](https://github.com/haneoka-gakuen/render-kernel-flutter). Game plugins compile scenes, cameras, characters and effects into the drawing contract. The host supplies the clock, media, storage and input.
 
-`scene_math.dart` exports the pure numeric matrix contract. Shared drawing and image caching come from `render-kernel-flutter`.
+## Usage
 
-Run `flutter pub get` and `flutter analyze` from the repository root. Haneoka's Linux Flutter AOT build uses this source and has run it with real stories, seeking and save restoration.
+Add the package as a Git dependency and create a `VegaRenderSession`. `scene_math.dart` exports the numeric matrix contract on its own.
+
+## Development
+
+```sh
+flutter pub get
+flutter analyze
+```
+
+## License
+
+[MPL-2.0](LICENSE).
